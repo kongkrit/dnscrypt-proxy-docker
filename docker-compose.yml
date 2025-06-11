@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  dnscrypt-proxy:
+    image: jedisct1/dnscrypt-proxy
+    container_name: dnscrypt-proxy
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - ./config:/config
+    command: -config /config/dnscrypt-proxy.toml
+    restart: unless-stopped
+    cap_add:
+      - NET_BIND_SERVICE
