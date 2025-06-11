@@ -3,10 +3,11 @@
 Secure, private DNS using dnscrypt-proxy and Docker with both DoT and DoH upstreams.
 
 ## Features
-- Cloudflare, Google, and Quad9 (unfiltered) via DoT/DoH
-- DNSSEC validation
-- No logging, no filtering
-- Auto-updating resolver list
+- Cloudflare, Google, and Quad9 (no filter) DoH and DoT
+- DNSSEC validation, no logging, no filtering
+- Works on most platforms (x86, ARM, etc.)
+- Healthcheck with `dnsprobe`
+- Auto-updated resolver list
 
 ## Quick Start
 
