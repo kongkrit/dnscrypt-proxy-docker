@@ -1,0 +1,22 @@
+server_names = [
+  'cloudflare',
+  'cloudflare-ipv6',
+  'google',
+  'google-ipv6',
+  'quad9-doh-ipv4-nofilter-ecs',
+  'quad9-doh-ipv6-nofilter-ecs'
+]
+
+require_dnssec = true
+require_nolog = true
+require_nofilter = true
+ignore_system_dns = true
+
+bootstrap_resolvers = ['1.1.1.1:53', '9.9.9.10:53', '8.8.8.8:53']
+fallback_resolvers = ['1.1.1.1:53', '8.8.8.8:53']
+
+[ sources.'public-resolvers' ]
+url = 'https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md'
+minisign_key = 'RWQe9sBLP7J8/jGj7a8UuHef9RhM3nqUqkE4Yy2YqQo='
+cache_file = 'public-resolvers.md'
+refresh_delay = 72
